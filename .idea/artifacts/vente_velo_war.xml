@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="vente-velo:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>vente-velo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="vente-velo-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="vente-velo:war exploded" />
+    </root>
+  </artifact>
+</component>

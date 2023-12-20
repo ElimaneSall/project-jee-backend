@@ -1,0 +1,50 @@
+package com.example.ventevelo.model.production;
+
+import javax.persistence.*;
+
+@Entity
+public class Marque {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column(name = "ID", nullable = false)
+    private int id;
+    @Basic
+    @Column(name = "NOM", nullable = false, length = 255)
+    private String nom;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Marque marque = (Marque) o;
+
+        if (id != marque.id) return false;
+        if (nom != null ? !nom.equals(marque.nom) : marque.nom != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (nom != null ? nom.hashCode() : 0);
+        return result;
+    }
+}
